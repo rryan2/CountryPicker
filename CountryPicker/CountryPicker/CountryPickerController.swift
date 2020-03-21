@@ -60,7 +60,7 @@ open class CountryPickerController: UIViewController {
         didSet { self.tableView.reloadData() }
     }
     
-    public var labelColor: UIColor = UIColor.black {
+    public var labelColor: UIColor = UIColor.white {
         didSet { self.tableView.reloadData() }
     }
     
@@ -107,12 +107,8 @@ open class CountryPickerController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = UIColor.systemBackground
-        } else {
-            view.backgroundColor = UIColor.white
-        }
-        
+        view.backgroundColor = UIColor.white
+        tableView.backgroundColor = .white
         // Setup view bar buttons
         let uiBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(CountryPickerController.crossButtonClicked(_:)))
         navigationItem.leftBarButtonItem = uiBarButtonItem
